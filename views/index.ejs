@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="shortcut icon" href="./images/favicon.ico" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript">
+
+/*
+    $(function() {
+      $('.led').click(function(){
+            alert('hello world!');
+        });
+     });
+*/
+    $(function() {
+      $('.btn').click(function(){
+       var cmd = $(this).data('cmd');
+
+        $.ajax({
+          url: '/'+ cmd ,
+          type: 'GET',
+          success: function(msg) {
+            //alert('success!!'); 
+            alert(msg); 
+          },
+          error: function(XMLHttpRequest, textStatus, errorThrown){
+            alert(XMLHttpRequest.status + ";" + XMLHttpRequest.statusText);
+          }
+        })
+      });
+    });
+
+    </script>
+
+  </head>
+  <body>
+  <div id="wrapper">
+
+   <header>
+    <div class="header">
+     <%= title %>
+    </div>
+   </header>
+
+    <hr noshade size="3">
+
+     <nav>
+	<div class="nav-zero">
+		<ul>
+			<li id="TV1" class="btn" data-cmd="tv-power">TV<br />ON/OFF</li> 
+			<li id="LIGHT1" class="btn" data-cmd="light_power_on">Light<br />ON</li> 
+			<li id="LIGHT1" class="btn" data-cmd="light_power_off">Light<br />OFF</li> 
+                </ul>
+	</div>
+     </nav>
+  </div>
+  </body>
+</html>

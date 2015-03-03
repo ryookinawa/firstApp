@@ -1,0 +1,43 @@
+var express = require('express');
+var router = express.Router();
+var command = require('./command.js');
+
+/* GET home page. */
+/*router.get('/', function(req, res) {
+  res.render('index', { title: 'Routing' });
+});
+
+
+module.exports = router;
+*/
+module.exports = {
+    index : function (req, res) {
+      res.render('index', { title: 'Remote Control' });
+    },
+    command : function (req, res) {
+//      res.render('index', { title: 'Remote Control' });
+        // idにより処理を分岐
+        // idをAPI的に活用する
+        var cmd = req.param('id');
+//           switch (cmd){
+//             case 'tv-power':
+               //res.render('index', { title: 'TVON' , req: cmd });
+	       console.log(command.sendIr(cmd));
+//              console.log('TTTVVV');
+               //kokoni command wo nyuuryoku
+//               break;
+//             case 'ps3-on': 
+               //res.render('index', { title: 'hogeON' , req: cmd });
+//	       console.log(command.sendIr(cmd));
+//               break;
+//             default:
+               //res.render('index', { title: 'Default' , req: cmd });
+//               break;
+//           }
+    },
+    create : function (req, res) {
+        // TODO: insert 実装する
+        //res.send(req.body.content);
+        res.render('create', { title: req.body.content });
+    }
+};
