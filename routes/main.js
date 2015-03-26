@@ -32,9 +32,8 @@ module.exports = {
 	});
        	console.log('main.js => ------------4444----------');
     },
-    create : function (req, res) {
-        // TODO: insert 実装する
-        //res.send(req.body.content);
-        res.render('create', { title: req.body.content });
+    register : function (req, res) {
+        //res.render('register');
+        res.render('register');
     }
 };
