@@ -21,16 +21,16 @@ module.exports = {
         // idをAPI的に活用する
         var cmd = req.param('id');
 
-       	res.console.log('------------Start----------');
+       	//res.console.log('------------Start----------');
 	var statCode = irkit.sendIr(cmd,function(statCode){
-       		console.log('------------Second----------');
+       		console.log('main.js => ------------Second----------');
 		//res.send("success_main.js");
 		res.send('StatusCode = ' + statCode);
-       		console.log(statCode);
-        	console.log('------------3333----------');
-        	console.log(statCode);
+       		console.log("main.js => " + statCode);
+        	console.log('main.js => ------------3333----------');
+        	console.log("main.js => " + statCode);
 	});
-       	console.log('------------4444----------');
+       	console.log('main.js => ------------4444----------');
     },
     create : function (req, res) {
         // TODO: insert 実装する
