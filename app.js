@@ -24,8 +24,9 @@ app.use(require("express-chrome-logger"));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', routes.index);
-app.get('/db', routes.register);
+app.get('/test', routes.test);
 app.get('/ir/:id', routes.command);
+app.post('/db', routes.register);
 //app.use('/', routes);
 //app.use('/users', users);
 

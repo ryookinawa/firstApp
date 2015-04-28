@@ -32,8 +32,14 @@ module.exports = {
 	});
        	console.log('main.js => ------------4444----------');
     },
-    register : function (req, res) {
+    test : function (req, res) {
         //res.render('register');
-        res.render('register');
+        res.render('test');
+    },
+    register : function (req, res) {
+        res.console.log('register directive');
+	var data = req.body;
+        res.console.log(data);
+	res.send(200);
     }
 };

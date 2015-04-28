@@ -1,0 +1,168 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>IRKit - JavaScriptテストページ</title>
+<style type="text/css">
+#box {
+	padding-top: 1%;
+	font-size: 30px;
+	width: 100%;
+	max-width: 1000px;
+}
+form {
+	width: 100%;
+	margin: 0 auto;
+}
+#input, #button, #textarea {
+	width: 100%;
+}
+input {
+	width: 100%;
+	height: 30px;
+	font-size: 15px;
+}
+#button button {
+	font-size: 40px;
+	width: 49%;
+}
+textarea {
+	font-size: 20px;
+	width: 98%;
+	height: 300px;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+<script type="text/javascript">
+
+/* IRKit Internet HTTP API */
+var url = "https://api.getirkit.com/1/messages";
+
+/* HTTP GET */
+function ajaxGet() {
+	if(!getKey())return false;
+	$.ajax({
+		type: "GET",
+		url: url,
+		data: {
+			clientkey: clientKey
+		},
+		cache: false,
+		dataType: "json",
+		timeout: 50000 //タイムアウト時間
+	})
+	.done(function(json) {
+		console.log(json.message.data);
+		$("#textarea textarea").val(JSON.stringify(json.message));
+	})
+	.fail(function(XMLHttpRequest, textStatus, errorThrown) {
+		console.log(textStatus); //エラーメッセージ
+	});
+}
+
+/* HTTP POST */
+function ajaxPost(){
+	if(!getKey())return false;
+	var jsonMessage = $("#textarea textarea").val();
+	$.ajax({
+		type: "POST",
+		url: url,
+		data: {
+			clientkey: clientKey,
+			deviceid: deviceId,
+			message: jsonMessage //GETした赤外線データ
+		},
+		cache: false,
+		timeout: 1000 //タイムアウト時間
+	})
+	.done(function(json) {
+		console.log("データ送信に成功しました");
+	})
+	.fail(function(XMLHttpRequest, textStatus, errorThrown) {
+		console.log(textStatus);
+	});
+}
+
+/* Add DB */
+function ajaxPostDb(){
+        if(!getKey())return false;
+        var jsonMessage = $("#textarea textarea").val();
+        $.ajax({
+                type: "POST",
+                url: '/db',
+                data: {
+                        message: jsonMessage //GETした赤外線データ
+                },
+                cache: false,
+                timeout: 1000 //タイムアウト時間
+        })
+        .done(function(json) {
+                console.log("データ送信に成功しました");
+        })
+        .fail(function(XMLHttpRequest, textStatus, errorThrown) {
+                console.log(textStatus);
+        });
+}
+
+/* 入力チェック */
+function getKey(){
+	clientKey = $("[name='clientkey']").val();
+	deviceId = $("[name='deviceid']").val();
+	if( !(clientKey && deviceId) ){
+		alert("clientkeyとdeviceidを入力してください");
+		return false;
+	}else{
+		var data = {client:clientKey,device:deviceId};
+		localStorage.setItem("irkit_key",JSON.stringify(data));
+		return true;
+	}
+}
+
+$("boy").ready(function(){
+	$("#clear").click(function(){
+		localStorage.removeItem("irkit_key");
+		$("[name='clientkey']").val("");
+		$("[name='deviceid']").val("");
+		$("#textarea textarea").val("");
+	});
+
+	item = JSON.parse(localStorage.getItem("irkit_key"));
+	if(item){
+		$("[name='clientkey']").val(item.client);
+		$("[name='deviceid']").val(item.device);
+	}
+});
+</script>
+
+</head>
+<body>
+<h1 style="margin:0;">IRKit - JavaScriptテストページ</h1>
+<div id="box">
+	<form>
+		<div id="input">
+			<table border="0">
+				<tr>
+					<td align="right">clientkey：</td>
+					<td><input type="text" name="clientkey"></td>
+				</tr>
+				<tr>
+					<td align="right">deviceid：</td>
+					<td><input type="text" name="deviceid"></td>
+				</tr>
+			</table>
+		</div>
+		<div id="button">
+			<button type="button" name="getButton" onclick="ajaxGet()">GET</button>
+			<button type="button" name="postButton" onclick="ajaxPost()">POST</button>
+			<button type="button" name="postButton" onclick="ajaxPostDb()">AddDB</button>
+		</div>
+		<div id="textarea">
+			<textarea></textarea>
+		</div>
+		<button type="button" id="clear">全てクリア</button>
+
+	</form>
+</div>
+</body>
+</html>
+
