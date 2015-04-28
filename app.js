@@ -25,7 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', routes.index);
 app.get('/db', routes.register);
-app.get('/api/:id', routes.command);
+app.get('/ir/:id', routes.command);
 //app.use('/', routes);
 //app.use('/users', users);
 
