@@ -14,7 +14,7 @@ module.exports = {
     index : function (req, res) {
       res.console.log('test')
       res.console.log('test2')
-      res.render('index', { title: 'Remote ControllllllGGGGGGG' });
+      res.render('index', { title: 'Remote ControllllllGGGGGGGHHHHHH' });
     },
     command : function (req, res) {
         // idにより処理を分岐
