@@ -53,6 +53,8 @@ function ajaxGet() {
 	})
 	.done(function(json) {
 		console.log(json.message.data);
+		res.console.log(json.message.data);
+		res.console.log(clientKey);
 		$("#textarea textarea").val(JSON.stringify(json.message));
 	})
 	.fail(function(XMLHttpRequest, textStatus, errorThrown) {
