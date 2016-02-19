@@ -45,7 +45,7 @@ function ajaxGet() {
 		type: "GET",
 		url: url,
 		data: {
-			clientkey: clientKey
+			clientkey: clientKey + "&clear=1"
 		},
 		cache: false,
 		dataType: "json",
@@ -121,8 +121,8 @@ function getKey(){
 $("body").ready(function(){
 	$("#clear").click(function(){
 		localStorage.removeItem("irkit_key");
-		$("[name='clientkey']").val("");
-		$("[name='deviceid']").val("");
+		//$("[name='clientkey']").val("");
+		//$("[name='deviceid']").val("");
 		$("#textarea textarea").val("");
 	});
 
