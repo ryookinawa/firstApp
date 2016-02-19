@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>IRKit - JavaScriptテストページ</title>
+<title>IRKit</title>
 <style type="text/css">
 #box {
 	padding-top: 1%;
@@ -20,7 +20,7 @@ form {
 input {
 	width: 100%;
 	height: 30px;
-	font-size: 5px;
+	font-size: 4px;
 }
 #button button {
 	font-size: 20px;
@@ -118,7 +118,7 @@ function getKey(){
 	}
 }
 
-$("boy").ready(function(){
+$("body").ready(function(){
 	$("#clear").click(function(){
 		localStorage.removeItem("irkit_key");
 		$("[name='clientkey']").val("");
@@ -136,7 +136,7 @@ $("boy").ready(function(){
 
 </head>
 <body>
-<h1 style="margin:0;">IRKit - JavaScriptテストページ</h1>
+<h1 style="margin:0;">IRKit</h1>
 <div id="box">
 	<form>
 		<div id="input">
