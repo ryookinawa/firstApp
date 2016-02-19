@@ -34,12 +34,12 @@ module.exports = {
         //res.render('register');
         res.render('test');
     },
-    
+
     // app.jsでregisterを読み込んだ場合の処理
     register : function (req, res) {
         res.console.log('register directive');
 	      var data = req.body;
         res.console.log(data);
-	      res.send(200);
+	      //res.send(200);
     }
 };
