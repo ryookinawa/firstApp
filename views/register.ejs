@@ -3,22 +3,25 @@
   <head>
     <meta charset="utf-8">
     <title><%= title %></title>
-    <script src="js/angular.js"></script>
-    <script src="js/angular-resource.js"></script>
+    <!--<script src="js/angular.js"></script>-
+    <script src="js/angular-resource.js"></script>-->
     <script src="app.js"></script>
+    <script src="//code.angularjs.org/1.3.15/angular.min.js"></script>
+    <script src="//code.angularjs.org/1.3.15/angular-resource.min.js"></script>
+    <script src="//code.angularjs.org/1.3.15/angular-route.min.js"></script>
 
     </script>
   </head>
   <body>
+    <header>
+     <div class="header">
+      <%= title %>
+     </div>
+    </header>
+
     <input type="number" ng-model="num">
     <div>1 + {{num}} = {{1 + num}}</div>
     <div ng-if="num != null">1 + {{num}} = {{1 + num}}</div>
-
-   <header>
-    <div class="header">
-     <%= title %>
-    </div>
-   </header>
 
     <hr noshade size="3">
 
