@@ -40,7 +40,7 @@ module.exports = {
         res.console.log('register directive');
 	      var data = req.body;
         res.console.log(data);
-        res.render('register', { title: 'Remote Contro1111111' });
+        res.render('register', { title: 'Register Code' });
 	      //res.send(200);
     }
 };
