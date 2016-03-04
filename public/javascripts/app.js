@@ -10,17 +10,17 @@ app.controller('aaaCtrl', function($scope){
 });
 
 app.controller('MainCtrl', function($scope) {
-  $scope.searchText = 'yamada';
-  $scope.num = '111';
+  //$scope.searchText = 'yamada';
+  //$scope.num = '111';
   $scope.irCode = 'yamada';
 
-  $scope.names = [
-    'Kazuhito Hokamura',
-    'Takeshi Takatsudo',
-    'Akihiro Oyamada',
-    'Kazunori Tokuda',
-    'Yukihisa Yamada',
-  ];
+  //$scope.names = [
+  //  'Kazuhito Hokamura',
+  //  'Takeshi Takatsudo',
+  //  'Akihiro Oyamada',
+  //  'Kazunori Tokuda',
+  //  'Yukihisa Yamada',
+  //];
 });
 
 app.filter('reverse', function() {
