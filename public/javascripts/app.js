@@ -11,8 +11,9 @@ app.controller('aaaCtrl', function($scope){
 
 app.controller('MainCtrl', function($scope) {
   $scope.searchText = 'yamada';
+  $scope.irCode = 'yamada';
 
-  $scope.irCode = [
+  $scope.names = [
     'Kazuhito Hokamura',
     'Takeshi Takatsudo',
     'Akihiro Oyamada',
