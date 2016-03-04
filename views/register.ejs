@@ -15,11 +15,11 @@
   <body>
       <%= title %>
 
+    <div ng-controller="MainCtrl">
       <hr noshade size="3">
       <input type="number" ng-model="num">
       <div>1 + {{num}} = {{1 + num}}</div>
 
-    <div ng-controller="MainCtrl">
       <input type="text" ng-model="deviceId">
       <input type="text" ng-model="clientKey">
       <input type="text" ng-model="irCode">

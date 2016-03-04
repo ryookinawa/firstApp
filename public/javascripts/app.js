@@ -11,6 +11,7 @@ app.controller('aaaCtrl', function($scope){
 
 app.controller('MainCtrl', function($scope) {
   $scope.searchText = 'yamada';
+  $scope.num = '111';
   $scope.irCode = 'yamada';
 
   $scope.names = [
