@@ -12,7 +12,7 @@ var IrSchema = new mongoose.Schema({
 // モデルとして登録
 var ircode = mongoose.model('IrCode', IrSchema);
 
-// mongodbに接続しているぞ
+// mongodbに接続
 mongoose.connect('mongodb://localhost:27017/test', // memoの部分はデータベース名
   // コールバックでエラー時の処理が書けるみたい。
   function(err) {
