@@ -65,8 +65,8 @@ ul, ol {
   text-shadow: 1px 1px 1px #888888;
 }
 
-.nav-zero ul:after {
-  content: 'アフターテスト';
+.nav-zero ul {
+  content: '';
   display: block;
   clear: both;
   text-align: center;
