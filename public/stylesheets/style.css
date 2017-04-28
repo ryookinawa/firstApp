@@ -67,7 +67,7 @@ ul, ol {
 
 .nav-zero ul {
   -content: '';
-  -display: block;
+  display: block;
   -clear: both;
   -text-align: center;
 }
