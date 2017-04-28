@@ -1,71 +1,74 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <link rel="shortcut icon" href="./images/favicon.ico" />
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script type="text/javascript">
 
-/*
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel="shortcut icon" href="./images/favicon.ico" />
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript">
+    /*
+        $(function() {
+          $('.led').click(function(){
+                alert('hello world!');
+            });
+         });
+    */
     $(function() {
-      $('.led').click(function(){
-            alert('hello world!');
-        });
-     });
-*/
-    $(function() {
-      $('.btn').click(function(){
-       var cmd = $(this).data('cmd');
+      $('.btn').click(function() {
+        var cmd = $(this).data('cmd');
 
         $.ajax({
-          url: '/'+ cmd ,
+          url: '/' + cmd,
           type: 'GET',
           success: function(msg) {
             //alert('success!!');
             alert(msg);
           },
-          error: function(XMLHttpRequest, textStatus, errorThrown){
+          error: function(XMLHttpRequest, textStatus, errorThrown) {
             alert(XMLHttpRequest.status + ";" + XMLHttpRequest.statusText);
           }
         })
       });
     });
+  </script>
 
-    </script>
+</head>
 
-  </head>
-  <body>
+<body>
   <div id="wrapper">
 
-   <header>
-    <div class="header">
-     <%= title %>
-    </div>
-   </header>
+    <header>
+      <div class="header">
+        <%= title %>
+      </div>
+    </header>
 
     <hr noshade size="3">
 
-     <nav>
-	<div class="nav-zero">
-		<ul>
-			<!-- <li id="TV1" class="btn" data-cmd="ir/tv_power_1">TV<br />ON/OFF</li> -->
-			<!-- <li id="LIGHT1" class="btn" data-cmd="ir/light_power_on_1">Light<br />ON</li> -->
-			<li id="LIGHT1" class="btn" data-cmd="ir/light_power_on_living_1">LivingLight<br />ON</li>
-			<!-- <li id="LIGHT1" class="btn" data-cmd="ir/light_power_off_1">Light<br />OFF</li> -->
-			<li id="LIGHT1" class="btn" data-cmd="ir/light_power_off_living_1">LivingLight<br />OFF</li>
-    </ul>
-    <ul>
-      <li id="TV1" class="btn" data-cmd="ir/tv_power_living_1">LivingTV<br />ON/OFF</li>
-      <li id="TV1" class="btn" data-cmd="ir/tv_vol_plus_living_1">LivingTV<br />Vol +</li>
-      <li id="TV1" class="btn" data-cmd="ir/tv_vol_down_living_1">LivingTV<br />Vol -</li>
-      <li id="TV1" class="btn" data-cmd="ir/tv_ch_plus_living_1">LivingTV<br />CH +</li>
-      <li id="TV1" class="btn" data-cmd="ir/tv_ch_down_living_1">LivingTV<br />CH -</li>
-    </ul>
-	</div>
-     </nav>
+    <nav>
+      <div class="nav-zero">
+        <ul>
+          <!-- <li id="TV1" class="btn" data-cmd="ir/tv_power_1">TV<br />ON/OFF</li> -->
+          <!-- <li id="LIGHT1" class="btn" data-cmd="ir/light_power_on_1">Light<br />ON</li> -->
+          <li id="LIGHT1" class="btn" data-cmd="ir/light_power_on_living_1">LivingLight<br />ON</li>
+          <!-- <li id="LIGHT1" class="btn" data-cmd="ir/light_power_off_1">Light<br />OFF</li> -->
+          <li id="LIGHT1" class="btn" data-cmd="ir/light_power_off_living_1">LivingLight<br />OFF</li>
+        </ul>
+        <ul>
+          <li id="TV1" class="btn" data-cmd="ir/tv_power_living_1">LivingTV<br />ON/OFF</li>
+          <li id="TV1" class="btn" data-cmd="ir/tv_vol_plus_living_1">LivingTV<br />Vol +</li>
+          <li id="TV1" class="btn" data-cmd="ir/tv_vol_down_living_1">LivingTV<br />Vol -</li>
+          <li id="TV1" class="btn" data-cmd="ir/tv_ch_plus_living_1">LivingTV<br />CH +</li>
+          <li id="TV1" class="btn" data-cmd="ir/tv_ch_down_living_1">LivingTV<br />CH -</li>
+        </ul>
+      </div>
+    </nav>
   </div>
-  </body>
+</body>
+
 </html>
