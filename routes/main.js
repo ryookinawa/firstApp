@@ -10,7 +10,7 @@ module.exports = {
     res.console.log('test')
     res.console.log('test2')
     res.render('index', {
-      title: 'Remote Control'
+      title: 'Remote Control6666666'
     });
   },
 
