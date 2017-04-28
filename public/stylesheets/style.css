@@ -53,13 +53,14 @@ ul, ol {
 .nav-zero li {
   float: left;
   width: 70px;
+  height: 70px;
   margin: 0 0 10px 10px;
-  padding: 0px;
-  border-radius: 20px;
+  padding: 5px;
+  border-radius: 50px 50px 50px 50px;
   -webkit-border-radius: 8px;
   text-align: center;
   color: #000000;
-  text-shadow: 1px 1px 1px #888888;
+  -text-shadow: 1px 1px 1px #888888;
 }
 
 .nav-zero ul:after {
