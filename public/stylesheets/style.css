@@ -70,6 +70,7 @@ ul, ol {
   display: block;
   clear: both;
   text-align: center;
+  margin-bottom: 30px;
 }
 
 .btn {
