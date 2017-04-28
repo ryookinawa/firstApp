@@ -47,7 +47,7 @@ ul, ol {
 .nav-zero {
   margin: 0 0 20px;
   float: left;
-  text-align: center;
+  -text-align: center;
 }
 
 .nav-zero li {
