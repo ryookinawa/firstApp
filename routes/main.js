@@ -9,7 +9,7 @@ module.exports = {
     index : function (req, res) {
         res.console.log('test')
         res.console.log('test2')
-        res.render('index', { title: 'Remote Control' });
+        res.render('index', { title: 'Remote Control2' });
     },
 
     // app.jsでcommandを読み込んだ場合の処理
