@@ -38,7 +38,7 @@ ul, ol {
 #wrapper {
   width: 1000px;
   margin: 0 auto;
-  marrgin-bottom: 50px;
+  margin-bottom: 50px;
   line-height: 1.2;
   font-size: small;
   color: #606060;
@@ -66,7 +66,7 @@ ul, ol {
 }
 
 .nav-zero ul {
-  widows: 600px;
+  widows: 1048px;
   -content: '';
   display: block;
   clear: both;
