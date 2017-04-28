@@ -52,8 +52,8 @@ ul, ol {
 
 .nav-zero li {
   float: left;
-  width: 70px;
-  -width: 50%;
+  -width: 70px;
+  width: 30%;
   -height: 70px;
   height: 50%;
   margin: 30px 20px;
@@ -68,7 +68,7 @@ ul, ol {
 .nav-zero ul {
   -content: '';
   display: block;
-  -clear: both;
+  clear: both;
   -text-align: center;
 }
 
