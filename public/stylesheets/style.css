@@ -66,6 +66,7 @@ ul, ol {
 }
 
 .nav-zero ul {
+  widows: 600px;
   -content: '';
   display: block;
   clear: both;
