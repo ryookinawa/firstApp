@@ -52,8 +52,8 @@ ul, ol {
 
 .nav-zero li {
   float: left;
-  -width: 70px;
-  width: 50%;
+  width: 70px;
+  -width: 50%;
   -height: 70px;
   height: 50%;
   margin: 0 0 10px 10px;
